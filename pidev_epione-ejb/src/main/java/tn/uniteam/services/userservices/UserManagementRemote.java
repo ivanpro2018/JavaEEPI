@@ -12,7 +12,7 @@ public interface UserManagementRemote {
 		public void addUser(AspNetUser a);
 		public void updateUser(AspNetUser a);
 		public void deleteUser(AspNetUser a);
-		public AspNetUser loginUser(String username);
+		public AspNetUser loginUser(String username, String password);
 		public AspNetUser searchUser(String username);
 	}
 

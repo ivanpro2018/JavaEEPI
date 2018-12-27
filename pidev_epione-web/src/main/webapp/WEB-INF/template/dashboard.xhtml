@@ -17,19 +17,19 @@
     <title><ui:insert name="title" /></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../dashboard/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- MetisMenu CSS -->
-    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <link href="../dashboard/vendor/metisMenu/metisMenu.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="../dashboard/dist/css/sb-admin-2.css" rel="stylesheet" />
 
     <!-- Morris Charts CSS -->
-    <link href="vendor/morrisjs/morris.css" rel="stylesheet" />
+    <link href="../dashboard/vendor/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../dashboard/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,7 +53,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="../dashboard/index.jsf">Epione Medical Portal</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -282,7 +282,28 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.jsf"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-file-text fa-fw"></i> Repports<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">View repports<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+		                                <li>
+		                                    <a href="../analytics/received_repports.jsf">Received repports</a>
+		                                </li>
+		                                <li>
+		                                    <a href="../analytics/sent_repports.jsf">Sent repports</a>
+		                                </li>
+		                            </ul>
+                                    
+                                </li>
+                                <li>
+                                    <a href="../analytics/send_repport.jsf">Send a repport</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -383,7 +404,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-			<div id="content">	
+			<div id="content" class="row">	
 				<ui:insert name="content">	
 	
 				</ui:insert>
@@ -396,21 +417,21 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="../dashboard/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../dashboard/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="../dashboard/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="vendor/raphael/raphael.min.js"></script>
-    <script src="vendor/morrisjs/morris.min.js"></script>
-    <script src="data/morris-data.js"></script>
+    <script src="../dashboard/vendor/raphael/raphael.min.js"></script>
+    <script src="../dashboard/vendor/morrisjs/morris.min.js"></script>
+    <script src="../dashboard/data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="dist/js/sb-admin-2.js"></script>
+    <script src="../dashboard/dist/js/sb-admin-2.js"></script>
 
 </h:body>
 
