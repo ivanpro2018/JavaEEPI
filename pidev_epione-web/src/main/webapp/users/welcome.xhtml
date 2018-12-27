@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"	
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="title">Logged in page</ui:define>
+	<ui:define name="content">
+		<h4> Bonjour, #{loginBean.user.userName} </h4>
+		
+		
+		
+		<h:form> 
+		 
+		    <p:commandButton value="Rédiger et envoyer un compte-rendu" style="margin-right:20px;" icon="fa fa-fw fa-user" action="#{loginBean.doGoToReport()}"/>
+		 
+		    <p:commandButton value="Exporter des rapports" id="withIcon2" action="#{buttonView.buttonAction}" style="margin-right:20px;" icon="fa fa-fw fa-user" type="button" />
+		</h:form>
+		
+		
+	</ui:define>
+
+
+</ui:composition>
+
+
