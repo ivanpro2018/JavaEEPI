@@ -20,6 +20,18 @@ import javax.persistence.Table;
 @Table(name="MedicalPaths")
 @NamedQuery(name="MedicalPath.findAll", query="SELECT m FROM MedicalPath m")
 public class MedicalPath implements Serializable {
+	public MedicalPath(String pathId, String description, String justification, Date recommendationDate,
+			String recommendedSpeciality, boolean validatedSteps, AspNetUser aspNetUser) {
+		super();
+		this.pathId = pathId;
+		Description = description;
+		this.justification = justification;
+		RecommendationDate = recommendationDate;
+		this.recommendedSpeciality = recommendedSpeciality;
+		this.validatedSteps = validatedSteps;
+		this.aspNetUser = aspNetUser;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -103,6 +115,13 @@ public class MedicalPath implements Serializable {
 
 	public void setAspNetUser(AspNetUser aspNetUser) {
 		this.aspNetUser = aspNetUser;
+	}
+
+	@Override
+	public String toString() {
+		return "MedicalPath [pathId=" + pathId + ", Description=" + Description + ", justification=" + justification
+				+ ", RecommendationDate=" + RecommendationDate + ", recommendedSpeciality=" + recommendedSpeciality
+				+ ", validatedSteps=" + validatedSteps + ", aspNetUser=" + aspNetUser + "]";
 	}
 
 }

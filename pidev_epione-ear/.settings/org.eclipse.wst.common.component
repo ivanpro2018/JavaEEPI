@@ -8,6 +8,12 @@
         <dependent-module archiveName="pidev_epione-ejb.jar" deploy-path="/" handle="module:/resource/JavaEEPI_pidev_epione-ejb/JavaEEPI_pidev_epione-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="json.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/json/json/20180813/json-20180813.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jsoup.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="javax.ws.rs-api.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/javax/ws/rs/javax.ws.rs-api/2.0-m02/javax.ws.rs-api-2.0-m02.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
