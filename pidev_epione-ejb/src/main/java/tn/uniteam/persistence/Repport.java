@@ -63,9 +63,9 @@ public class Repport implements Serializable {
 		return this.repportId;
 	}
 
-	public void setRepportId(int repportId) {
-		this.repportId = repportId;
-	}
+//	public void setRepportId(int repportId) {
+//		this.repportId = repportId;
+//	}
 
 	public String getRepportName() {
 		return this.repportName;

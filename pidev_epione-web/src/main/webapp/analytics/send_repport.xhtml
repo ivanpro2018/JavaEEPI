@@ -16,48 +16,46 @@
               	<div class="panel-heading"> Send a report to a referring doctor </div>
                 <div class="panel-body">
 						<h:form enctype="multipart/form-data">
-		     
+		     				
 					 		<h:panelGrid columns="2" cellspacing="5" styleClass="col-lg-12">
 								<h:outputLabel value="Report name : " /> 
-								<h:inputTextarea styleClass="form-control" />	
+								<h:inputTextarea value="#{compteRenduBean.report.repportName}" styleClass="form-control" />	
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 
 									
-								<h:outputLabel value="Patient : " /> 				
-								<select class="form-control">
-									<OPTION value="" label="-- select the sick patient --" style="font-style: italic; color: grey;" />
-									<OPTION value="" label="" />
-								</select>
+								<h:outputLabel value="Patient : " /> 
+								<h:selectOneMenu id="patients" styleClass="form-control" value="#{compteRenduBean.report.patientName}">
+								    <f:selectItems value="#{loginBean.doListPatients()}" var="user" itemValue="#{user.firstName} #{user.lastName}" itemLabel="#{user.firstName} #{user.lastName}" />
+								</h:selectOneMenu>
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 	
 								
 								<h:outputLabel value="Disease declared :" /> 				
-								<h:inputTextarea styleClass="form-control" />		
+								<h:inputTextarea value="#{compteRenduBean.report.diseaseDeclared}" styleClass="form-control" />		
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 	
 								
 								<h:outputLabel value="Symptoms : " /> 				
-								<h:inputTextarea styleClass="form-control" />		
+								<h:inputTextarea value="#{compteRenduBean.report.symptoms}" styleClass="form-control" />		
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 	
 								
 								<h:outputLabel value="Abnormalities : " /> 				
-								<h:inputTextarea styleClass="form-control" />		
+								<h:inputTextarea value="#{compteRenduBean.report.abnormalities}" styleClass="form-control" />		
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 	
 								
 								<h:outputLabel value="Image Disease" /> 				
-								<p:fileUpload value="" mode="simple" skinSimple="true"/>		
+								<h:inputFile value="#{compteRenduBean.picDisease}" />		
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 	
 								
 								<h:outputLabel value="Summary : " /> 				
-								<h:inputTextarea styleClass="form-control" />		
+								<h:inputTextarea value="#{compteRenduBean.report.repportContent}" styleClass="form-control" />		
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 	
 								
 								<h:outputLabel value="Diagnostic : " /> 				
-								<h:inputTextarea styleClass="form-control" />		
+								<h:inputTextarea value="#{compteRenduBean.report.diagnostic}" styleClass="form-control" />		
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 	
 								
 								<h:outputLabel value="Referring doctor : " /> 			
-								<select class="form-control">
-									<OPTION value="" label="-- select the doctor --" style="font-style: italic; color: grey;" />
-									<OPTION value="" label="" />
-								</select>
+								<h:selectOneMenu id="doctors" styleClass="form-control" value="#{compteRenduBean.report.referentDoctor}">
+								    <f:selectItems value="#{loginBean.doListDoctors()}" var="user" itemValue="#{user.firstName} #{user.lastName}" itemLabel="#{user.firstName} #{user.lastName}" />
+								</h:selectOneMenu>
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 
 								
 								<h:outputLabel value="Notification ?" />
@@ -68,9 +66,10 @@
 								<h:outputLabel value="" /> <h:outputLabel value="" /> 
 								
 								<h:outputLabel value="" /> 
-	                            <div>
-	                            	<button class="btn btn-primary btn-md btn-block" value="" type="submit"><i class="fa fa-check"></i> Send report</button>
-	                           	</div>
+	      						<h:commandButton action="#{compteRenduBean.doSendReport()}" styleClass="btn btn-primary btn-md btn-block" type="submit" value="Send report">
+<!-- 									<f:ajax execute="@form" render="@form" />
+ -->								</h:commandButton>
+	                            	
 						    </h:panelGrid>
 			     
 							

@@ -1,9 +1,13 @@
 package tn.uniteam.services.analytics;
 
+import java.util.Date;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import tn.uniteam.persistence.Repport;
 
 /**
  * Session Bean implementation class RepportManagement
@@ -23,9 +27,10 @@ public class RepportManagement implements RepportManagementRemote, RepportManage
     }
 
 	@Override
-	public void sendReport() {
+	public void sendReport(Repport r) {
 		// TODO Auto-generated method stub
-		
+		r.setRepportDate(new Date());
+		em.persist(r);
 	}
 
 }

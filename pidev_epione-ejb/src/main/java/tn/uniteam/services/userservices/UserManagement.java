@@ -72,4 +72,31 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 		return em.find(AspNetUser.class, Id);
 	}
 
+
+	@Override
+	public List<AspNetUser> getAllDoctors() {
+		// TODO Auto-generated method stub
+		String req = "select u from AspNetUser u where u.discriminator = 'Doctor'";
+		Query query = em.createQuery(req);
+		return query.getResultList();
+	}
+
+
+	@Override
+	public List<AspNetUser> getAllPatients() {
+		String req = "select u from AspNetUser u where u.discriminator = 'Patient'";
+		Query query = em.createQuery(req);
+		return query.getResultList();
+	}
+
+
+	@Override
+	public AspNetUser loginUser(String username) {
+		// TODO Auto-generated method stub
+		String req = "select u from AspNetUser u where u.username =:login or u.email =:email";
+		Query query = em.createQuery(req).setParameter("login", username).setParameter("email", username);
+		return (AspNetUser) query.getSingleResult();
+	}
+    
+
 }
