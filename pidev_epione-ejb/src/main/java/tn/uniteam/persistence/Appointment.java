@@ -20,32 +20,33 @@ public class Appointment implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="AppointmentId")
-	private int appointmentId;
+	private int AppointmentId;
 
 	@Column(name="AppointmentState")
-	private int appointmentState;
+	private int AppointmentState;
 
 	@Column(name="Date")
-	private Date date;
+	private Date Date;
 
 	@Column(name="Location")
-	private String location;
+	private String Location;
 
 	@Column(name="Specialities")
-	private int specialities;
+	private int Specialities;
 
 	//bi-directional many-to-one association to AspNetUser
 	@ManyToOne
 	@JoinColumn(name="DoctorId")
-	private AspNetUser aspNetUser1;
+	private AspNetUser AspNetUser1;
 
 	//bi-directional many-to-one association to AspNetUser
 	@ManyToOne
 	@JoinColumn(name="PatientId")
-	private AspNetUser aspNetUser2;
+	private AspNetUser AspNetUser2;
 
 	//bi-directional many-to-one association to Rate
 	@OneToMany(mappedBy="appointment")
+
 	private List<Rate> rates;
 	
 	public Appointment() {
@@ -55,77 +56,94 @@ public class Appointment implements Serializable {
 			AspNetUser aspNetUser1, AspNetUser aspNetUser2) {
 		super();
 		
-		this.appointmentState = appointmentState;
-		this.date = date;
-		this.location = location;
-		this.specialities = specialities;
-		this.aspNetUser1 = aspNetUser1;
-		this.aspNetUser2 = aspNetUser2;
+		this.AppointmentState = appointmentState;
+		this.Date = date;
+		this.Location = location;
+		this.Specialities = specialities;
+		this.AspNetUser1 = aspNetUser1;
+		this.AspNetUser2 = aspNetUser2;
 	}
+
 
 	public int getAppointmentId() {
-		return this.appointmentId;
+		return AppointmentId;
 	}
+
 
 	public void setAppointmentId(int appointmentId) {
-		this.appointmentId = appointmentId;
+		AppointmentId = appointmentId;
 	}
+
 
 	public int getAppointmentState() {
-		return this.appointmentState;
+		return AppointmentState;
 	}
+
 
 	public void setAppointmentState(int appointmentState) {
-		this.appointmentState = appointmentState;
+		AppointmentState = appointmentState;
 	}
+
 
 	public Date getDate() {
-		return this.date;
+		return Date;
 	}
+
 
 	public void setDate(Date date) {
-		this.date = date;
+		Date = date;
 	}
+
 
 	public String getLocation() {
-		return this.location;
+		return Location;
 	}
+
 
 	public void setLocation(String location) {
-		this.location = location;
+		Location = location;
 	}
+
 
 	public int getSpecialities() {
-		return this.specialities;
+		return Specialities;
 	}
+
 
 	public void setSpecialities(int specialities) {
-		this.specialities = specialities;
+		Specialities = specialities;
 	}
+
 
 	public AspNetUser getAspNetUser1() {
-		return this.aspNetUser1;
+		return AspNetUser1;
 	}
+
 
 	public void setAspNetUser1(AspNetUser aspNetUser1) {
-		this.aspNetUser1 = aspNetUser1;
+		AspNetUser1 = aspNetUser1;
 	}
+
 
 	public AspNetUser getAspNetUser2() {
-		return this.aspNetUser2;
+		return AspNetUser2;
 	}
+
 
 	public void setAspNetUser2(AspNetUser aspNetUser2) {
-		this.aspNetUser2 = aspNetUser2;
+		AspNetUser2 = aspNetUser2;
 	}
+
 
 	public List<Rate> getRates() {
-		return this.rates;
+		return rates;
 	}
 
+
 	public void setRates(List<Rate> rates) {
-		this.rates = rates;
+		rates = rates;
 	}
+
 
 	public Rate addRate(Rate rate) {
 		getRates().add(rate);
@@ -143,9 +161,10 @@ public class Appointment implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Appointment [appointmentId=" + appointmentId + ", appointmentState=" + appointmentState + ", date="
-				+ date + ", location=" + location + ", specialities=" + specialities + ", aspNetUser1=" + aspNetUser1
-				+ ", aspNetUser2=" + aspNetUser2 + "]";
+		return "Appointment [AppointmentId=" + AppointmentId + ", AppointmentState=" + AppointmentState + ", Date="
+				+ Date + ", Location=" + Location + ", Specialities=" + Specialities + ", AspNetUser1=" + AspNetUser1
+				+ ", AspNetUser2=" + AspNetUser2 + ", Rates=" + rates + "]";
 	}
+
 
 }

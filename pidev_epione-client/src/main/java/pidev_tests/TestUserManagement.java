@@ -18,7 +18,9 @@ public class TestUserManagement {
 		// TODO Auto-generated method stub
 		Context ctx = new InitialContext();
 		String jndiName = "pidev_epione-ear/pidev_epione-ejb/UserManagement!tn.uniteam.services.userservices.UserManagementRemote";
+		
 		UserManagementRemote proxy = (UserManagementRemote) ctx.lookup(jndiName);
+
 		AspNetUser a = new AspNetUser();
 		a.setUserName("Ivanoos");
 		a.setId("kjfkjjkjdefeffjkkj");
@@ -29,25 +31,31 @@ public class TestUserManagement {
 		a.setAccessFailedCount(0);
 		a.setTwoFactorEnabled(false);
 		a.setGender(Gender.female);
-		Date d = new Date();
-		a.setBirthDate(d);
+
+		//Date d = new Date();
+		//AspNetUser b = new AspNetUser("Sirine",0,"sirine123",true,true,false,false,"patient");
 		
+		
+		proxy.addUser(a);
+		System.out.println("User ajouté!");
 		
 		try {
+
 			AspNetUser u = proxy.searchUser("kjfkjjkjdefeffjkkj");
+
 			System.out.println("User trouvé! "+u);
 			proxy.deleteUser(u);	
 			System.out.println("User retiré!");
-			proxy.addUser(a);	
-			System.out.println("User ajouté!");
-			a.setUserName("Polios");
-			proxy.updateUser(a);	
-			System.out.println("User modifié!");
-			System.out.println(proxy.getAllUsers());
-			System.out.println("OK!!");
+//			proxy.addUser(a);	
+//			System.out.println("User ajouté!");
+//			a.setUserName("Polios");
+//			proxy.updateUser(a);	
+//			System.out.println("User modifié!");
+//			System.out.println(proxy.getAllUsers());
+//			System.out.println("OK!!");
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("cv pas!!");
 		}
 				
 		

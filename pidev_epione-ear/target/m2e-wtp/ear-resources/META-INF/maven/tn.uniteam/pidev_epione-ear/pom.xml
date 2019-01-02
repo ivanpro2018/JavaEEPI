@@ -15,11 +15,6 @@
 			<artifactId>pidev_epione-web</artifactId>
 			<type>war</type>
 		</dependency>
-		<dependency>
-			<groupId>tn.uniteam</groupId>
-			<artifactId>pidev_epione-ejb</artifactId>
-			<type>ejb</type>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
 
 		<dependency>		
@@ -28,6 +23,11 @@
 			<version>2.0-m02</version>		
 		</dependency>
 
+		<dependency>
+			<groupId>tn.uniteam</groupId>
+			<artifactId>pidev_epione-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
 	</dependencies>
 
 	<build>

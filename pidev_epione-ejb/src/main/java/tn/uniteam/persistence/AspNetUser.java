@@ -299,6 +299,10 @@ public class AspNetUser implements Serializable {
 		UserName = userName;
 	}
 
+	
+
+	
+
 	@Override
 	public String toString() {
 		return "AspNetUser [Id=" + Id + ", AccessFailedCount=" + AccessFailedCount + ", Address=" + Address + ", Age="

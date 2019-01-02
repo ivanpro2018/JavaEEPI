@@ -24,6 +24,12 @@
 
     <!-- Custom CSS -->
     <link href="../dashboard/dist/css/sb-admin-2.css" rel="stylesheet" />
+    
+    <!-- DataTables CSS -->
+    <link href="../dashboard/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet" />
+    
+    <!-- DataTables Responsive CSS -->
+    <link href="../dashboard/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet" />
 
     <!-- Morris Charts CSS -->
     <link href="../dashboard/vendor/morrisjs/morris.css" rel="stylesheet" />
@@ -53,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../dashboard/index.jsf">Epione Medical Portal</a>
+                <a class="navbar-brand" href="../index.jsf">Epione Medical Portal</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -258,7 +264,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="../analytics/loginDash.jsf"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -282,7 +288,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.jsf"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="../dashboard/index.jsf"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-file-text fa-fw"></i> Repports<span class="fa arrow"></span></a>
@@ -305,7 +311,23 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li> <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Statistics<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../analytics/stats_appointments.jsf">Appointments</a>
+                                </li>
+                                <li>
+                                    <a href="../analytics/stats_cares.jsf">Medical Cares</a>
+                                </li>
+                                <li>
+                                    <a href="../analytics/stats_others.jsf">Others</a>
+
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                         <li>
+
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Doctor's Operation<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -313,13 +335,29 @@
                                 </li>
                                 <li>
                                     <a href="../espacemedecin/ShowReason.jsf">View Reason</a>
+								</li>
+                           </ul>
+                           </li>
+                        <li>
+
+                            <a href="../espacemedecin/statAzza.jsf"><i class="fa fa-bar-chart-o fa-fw"></i> Doctor Bilan</a>
+            
+							</li>
+							<li>
+                            <a href="#"><i class="fa fa-institution fa-fw"></i> Management<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../analytics/staff.jsf">Employees</a>
+                                </li>
+                                <li>
+                                    <a href="../analytics/assets.jsf">Assets</a>
+                                </li>
+                                <li>
+                                    <a href="../analytics/balance_sheet.jsf">Balance sheet</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="../espacemedecin/statAzza.jsf"><i class="fa fa-bar-chart-o fa-fw"></i> Doctor Bilan</a>
-            
+
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -448,6 +486,19 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dashboard/dist/js/sb-admin-2.js"></script>
+
+	<!-- DataTables JavaScript -->
+	<script src="../dashboard/vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="../dashboard/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+	<script src="../dashboard/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	
+	<script>
+	    $(document).ready(function() {
+	        $('#dataTables-example').DataTable({
+	            responsive: true
+	        });
+	    });
+    </script>
 
 </h:body>
 
