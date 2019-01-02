@@ -36,239 +36,219 @@ public class AspNetUser implements Serializable {
 
 	@Id
 	@Column(name="Id")
-	private String id;
+	private String Id;
 
 	@Column(name="AccessFailedCount")
-	private int accessFailedCount;
+	private int AccessFailedCount;
 
 	@Column(name="Address")
-	private String address;
+	private String Address;
 
 	@Column(name="Age")
-	private int age;
+	private int Age;
 
 	@Column(name="BirthDate")
-	private Date birthDate;
+	private Date BirthDate;
 
 	@Column(name="Discriminator")
-	private String discriminator;
+	private String Discriminator;
 
 	@Column(name="Email")
-	private String email;
+	private String Email;
 
 	@Column(name="EmailConfirmed")
-	private boolean emailConfirmed;
+	private boolean EmailConfirmed;
 
 	@Column(name="FirstName")
-	private String firstName;
+	private String FirstName;
 
 	@Column(name="Gender")
-	private Gender gender;
+	private Gender Gender;
 
 	@Column(name="ImageName")
-	private String imageName;
+	private String ImageName;
 
 	@Column(name="LastName")
-	private String lastName;
+	private String LastName;
 
 	@Column(name="LockoutEnabled")
-	private boolean lockoutEnabled;
+	private boolean LockoutEnabled;
 
 	@Column(name="LockoutEndDateUtc")
-	private Timestamp lockoutEndDateUtc;
+	private Timestamp LockoutEndDateUtc;
 
 	@Column(name="PasswordHash")
-	private String passwordHash;
+	private String PasswordHash;
 
 	@Column(name="PhoneNumber")
-	private String phoneNumber;
+	private String PhoneNumber;
 
 	@Column(name="PhoneNumberConfirmed")
-	private boolean phoneNumberConfirmed;
+	private boolean PhoneNumberConfirmed;
 
 	@Column(name="Poids")
-	private int poids;
+	private int Poids;
 
 	@Column(name="SecurityStamp")
 	private String securityStamp;
 
 	@Column(name="Speciality")
-	private Speciality speciality;
+	private Speciality Speciality;
 
 	@Column(name="Taille")
-	private int taille;
+	private int Taille;
 
 	@Column(name="Traitements")
-	private String traitements;
+	private String Traitements;
 
 	@Column(name="TwoFactorEnabled")
-	private boolean twoFactorEnabled;
+	private boolean TwoFactorEnabled;
 
 	@Column(name="UserName")
-	private String username;
+	private String UserName;
 	
 	public AspNetUser() {
 	}
 
-	public AspNetUser(String id, int accessFailedCount, String discriminator, boolean emailConfirmed,
-			boolean lockoutEnabled, boolean phoneNumberConfirmed, boolean twoFactorEnabled, String userName) {
-		super();
-		this.id = id;
-		this.accessFailedCount = accessFailedCount;
-		this.discriminator = discriminator;
-		this.emailConfirmed = emailConfirmed;
-		this.lockoutEnabled = lockoutEnabled;
-		this.phoneNumberConfirmed = phoneNumberConfirmed;
-		this.twoFactorEnabled = twoFactorEnabled;
-		this.username = userName;
-	}
-
 	public String getId() {
-		return this.id;
+		return Id;
 	}
 
 	public void setId(String id) {
-		this.id = id;
+		Id = id;
 	}
 
 	public int getAccessFailedCount() {
-		return this.accessFailedCount;
+		return AccessFailedCount;
 	}
 
 	public void setAccessFailedCount(int accessFailedCount) {
-		this.accessFailedCount = accessFailedCount;
+		AccessFailedCount = accessFailedCount;
 	}
 
 	public String getAddress() {
-		return this.address;
+		return Address;
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+		Address = address;
 	}
 
 	public int getAge() {
-		return this.age;
+		return Age;
 	}
 
 	public void setAge(int age) {
-		this.age = age;
+		Age = age;
 	}
 
-	public Date getBirthDate() {
-		return this.birthDate;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
+	
 	public String getDiscriminator() {
-		return this.discriminator;
+		return Discriminator;
 	}
 
 	public void setDiscriminator(String discriminator) {
-		this.discriminator = discriminator;
+		Discriminator = discriminator;
 	}
 
 	public String getEmail() {
-		return this.email;
+		return Email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		Email = email;
 	}
 
-	public boolean getEmailConfirmed() {
-		return this.emailConfirmed;
+	public boolean isEmailConfirmed() {
+		return EmailConfirmed;
 	}
 
 	public void setEmailConfirmed(boolean emailConfirmed) {
-		this.emailConfirmed = emailConfirmed;
+		EmailConfirmed = emailConfirmed;
 	}
 
 	public String getFirstName() {
-		return this.firstName;
+		return FirstName;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		FirstName = firstName;
 	}
 
 	public Gender getGender() {
-		return this.gender;
+		return Gender;
 	}
 
 	public void setGender(Gender gender) {
-		this.gender = gender;
+		Gender = gender;
 	}
 
 	public String getImageName() {
-		return this.imageName;
+		return ImageName;
 	}
 
 	public void setImageName(String imageName) {
-		this.imageName = imageName;
+		ImageName = imageName;
 	}
 
 	public String getLastName() {
-		return this.lastName;
+		return LastName;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		LastName = lastName;
 	}
 
-	public boolean getLockoutEnabled() {
-		return this.lockoutEnabled;
+	public boolean isLockoutEnabled() {
+		return LockoutEnabled;
 	}
 
 	public void setLockoutEnabled(boolean lockoutEnabled) {
-		this.lockoutEnabled = lockoutEnabled;
+		LockoutEnabled = lockoutEnabled;
 	}
 
 	public Timestamp getLockoutEndDateUtc() {
-		return this.lockoutEndDateUtc;
+		return LockoutEndDateUtc;
 	}
 
 	public void setLockoutEndDateUtc(Timestamp lockoutEndDateUtc) {
-		this.lockoutEndDateUtc = lockoutEndDateUtc;
+		LockoutEndDateUtc = lockoutEndDateUtc;
 	}
 
 	public String getPasswordHash() {
-		return this.passwordHash;
+		return PasswordHash;
 	}
 
 	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
+		PasswordHash = passwordHash;
 	}
 
 	public String getPhoneNumber() {
-		return this.phoneNumber;
+		return PhoneNumber;
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		PhoneNumber = phoneNumber;
 	}
 
-	public boolean getPhoneNumberConfirmed() {
-		return this.phoneNumberConfirmed;
+	public boolean isPhoneNumberConfirmed() {
+		return PhoneNumberConfirmed;
 	}
 
 	public void setPhoneNumberConfirmed(boolean phoneNumberConfirmed) {
-		this.phoneNumberConfirmed = phoneNumberConfirmed;
+		PhoneNumberConfirmed = phoneNumberConfirmed;
 	}
 
 	public int getPoids() {
-		return this.poids;
+		return Poids;
 	}
 
 	public void setPoids(int poids) {
-		this.poids = poids;
+		Poids = poids;
 	}
 
 	public String getSecurityStamp() {
-		return this.securityStamp;
+		return securityStamp;
 	}
 
 	public void setSecurityStamp(String securityStamp) {
@@ -276,57 +256,157 @@ public class AspNetUser implements Serializable {
 	}
 
 	public Speciality getSpeciality() {
-		return this.speciality;
+		return Speciality;
 	}
 
 	public void setSpeciality(Speciality speciality) {
-		this.speciality = speciality;
+		Speciality = speciality;
 	}
 
 	public int getTaille() {
-		return this.taille;
+		return Taille;
 	}
 
 	public void setTaille(int taille) {
-		this.taille = taille;
+		Taille = taille;
 	}
 
 	public String getTraitements() {
-		return this.traitements;
+		return Traitements;
 	}
 
 	public void setTraitements(String traitements) {
-		this.traitements = traitements;
+		Traitements = traitements;
 	}
 
-	public boolean getTwoFactorEnabled() {
-		return this.twoFactorEnabled;
+	public boolean isTwoFactorEnabled() {
+		return TwoFactorEnabled;
 	}
 
 	public void setTwoFactorEnabled(boolean twoFactorEnabled) {
-		this.twoFactorEnabled = twoFactorEnabled;
+		TwoFactorEnabled = twoFactorEnabled;
 	}
 
+	
+
+
+
 	public String getUserName() {
-		return this.username;
+		return UserName;
 	}
 
 	public void setUserName(String userName) {
-		this.username = userName;
+		UserName = userName;
 	}
-
 
 	@Override
 	public String toString() {
-		return "User : [id=" + id + ", accessFailedCount=" + accessFailedCount + ", address=" + address + ", age="
-				+ age + ", birthDate=" + birthDate + ", discriminator=" + discriminator + ", email=" + email
-				+ ", emailConfirmed=" + emailConfirmed + ", firstName=" + firstName + ", gender=" + gender
-				+ ", imageName=" + imageName + ", lastName=" + lastName + ", lockoutEnabled=" + lockoutEnabled
-				+ ", lockoutEndDateUtc=" + lockoutEndDateUtc + ", passwordHash=" + passwordHash + ", phoneNumber="
-				+ phoneNumber + ", phoneNumberConfirmed=" + phoneNumberConfirmed + ", poids=" + poids
-				+ ", securityStamp=" + securityStamp + ", speciality=" + speciality + ", taille=" + taille
-				+ ", traitements=" + traitements + ", twoFactorEnabled=" + twoFactorEnabled + ", userName=" + username
+		return "AspNetUser [Id=" + Id + ", AccessFailedCount=" + AccessFailedCount + ", Address=" + Address + ", Age="
+				+ Age + ", BirthDate=" + BirthDate + ", Discriminator=" + Discriminator + ", Email=" + Email
+				+ ", EmailConfirmed=" + EmailConfirmed + ", FirstName=" + FirstName + ", Gender=" + Gender
+				+ ", ImageName=" + ImageName + ", LastName=" + LastName + ", LockoutEnabled=" + LockoutEnabled
+				+ ", LockoutEndDateUtc=" + LockoutEndDateUtc + ", PasswordHash=" + PasswordHash + ", PhoneNumber="
+				+ PhoneNumber + ", PhoneNumberConfirmed=" + PhoneNumberConfirmed + ", Poids=" + Poids
+				+ ", securityStamp=" + securityStamp + ", Speciality=" + Speciality + ", Taille=" + Taille
+				+ ", Traitements=" + Traitements + ", TwoFactorEnabled=" + TwoFactorEnabled + ", UserName=" + UserName
 				+ "]";
 	}
+
+	public AspNetUser(String id, int accessFailedCount, String address, int age, Date birthDate, String discriminator,
+			String email, boolean emailConfirmed, String firstName, tn.uniteam.persistence.AspNetUser.Gender gender,
+			String imageName, String lastName, boolean lockoutEnabled, Timestamp lockoutEndDateUtc, String passwordHash,
+			String phoneNumber, boolean phoneNumberConfirmed, int poids, String securityStamp,
+			tn.uniteam.persistence.AspNetUser.Speciality speciality, int taille, String traitements,
+			boolean twoFactorEnabled, String userName) {
+		super();
+		Id = id;
+		AccessFailedCount = accessFailedCount;
+		Address = address;
+		Age = age;
+		BirthDate = birthDate;
+		Discriminator = discriminator;
+		Email = email;
+		EmailConfirmed = emailConfirmed;
+		FirstName = firstName;
+		Gender = gender;
+		ImageName = imageName;
+		LastName = lastName;
+		LockoutEnabled = lockoutEnabled;
+		LockoutEndDateUtc = lockoutEndDateUtc;
+		PasswordHash = passwordHash;
+		PhoneNumber = phoneNumber;
+		PhoneNumberConfirmed = phoneNumberConfirmed;
+		Poids = poids;
+		this.securityStamp = securityStamp;
+		Speciality = speciality;
+		Taille = taille;
+		Traitements = traitements;
+		TwoFactorEnabled = twoFactorEnabled;
+		UserName = userName;
+	}
+
+	public AspNetUser(String id, int accessFailedCount, String address, int age, String discriminator,
+			String email, boolean emailConfirmed, String firstName, tn.uniteam.persistence.AspNetUser.Gender gender,
+			String imageName, String lastName, boolean lockoutEnabled, Timestamp lockoutEndDateUtc, String passwordHash,
+			String phoneNumber, boolean phoneNumberConfirmed, int poids, String securityStamp,
+			tn.uniteam.persistence.AspNetUser.Speciality speciality, int taille, String traitements,
+			boolean twoFactorEnabled, String username) {
+		super();
+		Id = id;
+		AccessFailedCount = accessFailedCount;
+		Address = address;
+		Age = age;
+		Discriminator = discriminator;
+		Email = email;
+		EmailConfirmed = emailConfirmed;
+		FirstName = firstName;
+		Gender = gender;
+		ImageName = imageName;
+		LastName = lastName;
+		LockoutEnabled = lockoutEnabled;
+		LockoutEndDateUtc = lockoutEndDateUtc;
+		PasswordHash = passwordHash;
+		PhoneNumber = phoneNumber;
+		PhoneNumberConfirmed = phoneNumberConfirmed;
+		Poids = poids;
+		this.securityStamp = securityStamp;
+		Speciality = speciality;
+		Taille = taille;
+		Traitements = traitements;
+		TwoFactorEnabled = twoFactorEnabled;
+		UserName = username;
+	}
+
+	public Date getBirthDate() {
+		return BirthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		BirthDate = birthDate;
+	}
+
+	public AspNetUser(String address, int age, String discriminator, String email, String firstName,
+			tn.uniteam.persistence.AspNetUser.Gender gender, String imageName, String lastName, String passwordHash,
+			String phoneNumber, boolean phoneNumberConfirmed, int poids,
+			tn.uniteam.persistence.AspNetUser.Speciality speciality, int taille, String traitements, String username) {
+		super();
+		Address = address;
+		Age = age;
+		Discriminator = discriminator;
+		Email = email;
+		FirstName = firstName;
+		Gender = gender;
+		ImageName = imageName;
+		LastName = lastName;
+		PasswordHash = passwordHash;
+		PhoneNumber = phoneNumber;
+		PhoneNumberConfirmed = phoneNumberConfirmed;
+		Poids = poids;
+		Speciality = speciality;
+		Taille = taille;
+		Traitements = traitements;
+		UserName = username;
+	}
+	
 
 }

@@ -21,7 +21,7 @@ public class TestUserManagement {
 		UserManagementRemote proxy = (UserManagementRemote) ctx.lookup(jndiName);
 		AspNetUser a = new AspNetUser();
 		a.setUserName("Ivanoos");
-		a.setId("kjfkjjkjdefeffjkdekj");
+		a.setId("kjfkjjkjdefeffjkkj");
 		a.setEmailConfirmed(true);
 		a.setLockoutEnabled(true);
 		a.setDiscriminator("patient");
@@ -34,7 +34,7 @@ public class TestUserManagement {
 		
 		
 		try {
-			AspNetUser u = proxy.searchUser("kjfkjjkjdefeffjkdekj");
+			AspNetUser u = proxy.searchUser("kjfkjjkjdefeffjkkj");
 			System.out.println("User trouvé! "+u);
 			proxy.deleteUser(u);	
 			System.out.println("User retiré!");

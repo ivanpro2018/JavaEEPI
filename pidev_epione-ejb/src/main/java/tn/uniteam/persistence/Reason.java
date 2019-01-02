@@ -34,6 +34,41 @@ public class Reason implements Serializable {
 
 	public Reason() {
 	}
+	
+
+	public Reason(float prix, String reasonContent) {
+		super();
+		this.prix = prix;
+		this.reasonContent = reasonContent;
+	}
+	
+	
+	
+
+	public Reason(int reasonId, float prix, String reasonContent, AspNetUser aspNetUser) {
+		super();
+		this.reasonId = reasonId;
+		this.prix = prix;
+		this.reasonContent = reasonContent;
+		this.aspNetUser = aspNetUser;
+	}
+
+
+	public Reason(float prix, String reasonContent, AspNetUser aspNetUser) {
+		super();
+		this.prix = prix;
+		this.reasonContent = reasonContent;
+		this.aspNetUser = aspNetUser;
+	}
+
+
+	public Reason(int reasonId, float prix, String reasonContent) {
+		super();
+		this.reasonId = reasonId;
+		this.prix = prix;
+		this.reasonContent = reasonContent;
+	}
+
 
 	public int getReasonId() {
 		return this.reasonId;
@@ -65,6 +100,13 @@ public class Reason implements Serializable {
 
 	public void setAspNetUser(AspNetUser aspNetUser) {
 		this.aspNetUser = aspNetUser;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Reason [reasonId=" + reasonId + ", prix=" + prix + ", reasonContent=" + reasonContent + ", aspNetUser="
+				+ aspNetUser + "]";
 	}
 
 }

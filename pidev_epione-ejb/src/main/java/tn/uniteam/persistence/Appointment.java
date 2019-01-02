@@ -47,8 +47,20 @@ public class Appointment implements Serializable {
 	//bi-directional many-to-one association to Rate
 	@OneToMany(mappedBy="appointment")
 	private List<Rate> rates;
-
+	
 	public Appointment() {
+	}
+
+	public Appointment(int appointmentState, Date date, String location, int specialities,
+			AspNetUser aspNetUser1, AspNetUser aspNetUser2) {
+		super();
+		
+		this.appointmentState = appointmentState;
+		this.date = date;
+		this.location = location;
+		this.specialities = specialities;
+		this.aspNetUser1 = aspNetUser1;
+		this.aspNetUser2 = aspNetUser2;
 	}
 
 	public int getAppointmentId() {
@@ -127,6 +139,13 @@ public class Appointment implements Serializable {
 		rate.setAppointment(null);
 
 		return rate;
+	}
+
+	@Override
+	public String toString() {
+		return "Appointment [appointmentId=" + appointmentId + ", appointmentState=" + appointmentState + ", date="
+				+ date + ", location=" + location + ", specialities=" + specialities + ", aspNetUser1=" + aspNetUser1
+				+ ", aspNetUser2=" + aspNetUser2 + "]";
 	}
 
 }

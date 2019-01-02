@@ -14,5 +14,6 @@ public interface UserManagementRemote {
 		public void deleteUser(AspNetUser a);
 		public AspNetUser loginUser(String username, String password);
 		public AspNetUser searchUser(String username);
+		
 	}
 

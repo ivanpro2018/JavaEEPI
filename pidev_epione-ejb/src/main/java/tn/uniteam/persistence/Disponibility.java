@@ -18,63 +18,88 @@ public class Disponibility implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="Id")
-	private int id;
+	private int Id;
 
 	@Column(name="Description")
-	private String description;
+	private String Description;
 
 	@Column(name="EndDate")
-	private Timestamp endDate;
+	private Timestamp EndDate;
 
 	@Column(name="StartDate")
-	private Timestamp startDate;
+	private Timestamp StartDate;
 
 	//bi-directional many-to-one association to AspNetUser
 	@ManyToOne
 	@JoinColumn(name="DoctorId")
-	private AspNetUser aspNetUser;
+	private AspNetUser Doctor;
 
 	public Disponibility() {
 	}
 
 	public int getId() {
-		return this.id;
+		return Id;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		Id = id;
 	}
 
 	public String getDescription() {
-		return this.description;
+		return Description;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		Description = description;
 	}
 
 	public Timestamp getEndDate() {
-		return this.endDate;
+		return EndDate;
 	}
 
-	public void setEndDate(Timestamp endDate) {
-		this.endDate = endDate;
+	public void setEndDate(Timestamp dndDate) {
+		EndDate = dndDate;
 	}
 
 	public Timestamp getStartDate() {
-		return this.startDate;
+		return StartDate;
 	}
 
 	public void setStartDate(Timestamp startDate) {
-		this.startDate = startDate;
+		StartDate = startDate;
 	}
 
-	public AspNetUser getAspNetUser() {
-		return this.aspNetUser;
+	public AspNetUser getDoctor() {
+		return Doctor;
 	}
 
-	public void setAspNetUser(AspNetUser aspNetUser) {
-		this.aspNetUser = aspNetUser;
+	public void setDoctor(AspNetUser doctor) {
+		Doctor = doctor;
 	}
+
+	public Disponibility(int id, String description, Timestamp dndDate, Timestamp startDate, AspNetUser doctor) {
+		super();
+		Id = id;
+		Description = description;
+		EndDate = dndDate;
+		StartDate = startDate;
+		Doctor = doctor;
+	}
+
+	public Disponibility(String description, Timestamp dndDate, Timestamp startDate, AspNetUser doctor) {
+		super();
+		Description = description;
+		EndDate = dndDate;
+		StartDate = startDate;
+		Doctor = doctor;
+	}
+
+	@Override
+	public String toString() {
+		return "Disponibility [Id=" + Id + ", Description=" + Description + ", DndDate=" + EndDate + ", StartDate="
+				+ StartDate + ", Doctor=" + Doctor + "]";
+	}
+
+	
 
 }
