@@ -81,6 +81,13 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 		return query.getResultList();
 	}
 
+	@Override
+	public List<AspNetUser> getOthersDoctors(AspNetUser doc) {
+		// TODO Auto-generated method stub
+		String req = "select u from AspNetUser u where u.discriminator = 'Doctor' and u.id <>:ids";
+		Query query = em.createQuery(req).setParameter("ids", doc.getId());
+		return query.getResultList();
+	}
 
 	@Override
 	public List<AspNetUser> getAllPatients() {

@@ -11,6 +11,7 @@ public interface UserManagementLocal {
 	public List<AspNetUser> getAllUsers();
 	public List<AspNetUser> getAllDoctors();
 	public List<AspNetUser> getAllPatients();
+	public List<AspNetUser> getOthersDoctors(AspNetUser doc);
 	public void addUser(AspNetUser a);
 	public void updateUser(AspNetUser a);
 	public void deleteUser(AspNetUser a);

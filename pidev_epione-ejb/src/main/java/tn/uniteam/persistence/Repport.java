@@ -155,4 +155,12 @@ public class Repport implements Serializable {
 		this.aspNetUser = aspNetUser;
 	}
 
+	@Override
+	public String toString() {
+		return "Repport [repportId=" + repportId + ", repportName=" + repportName + ", repportDate=" + repportDate
+				+ ", patientName=" + patientName + ", diseaseDeclared=" + diseaseDeclared + ", symptoms=" + symptoms
+				+ ", abnormalities=" + abnormalities + ", imageDisease=" + imageDisease + ", repportContent="
+				+ repportContent + ", diagnostic=" + diagnostic + ", referentDoctor=" + referentDoctor + "]";
+	}
+
 }

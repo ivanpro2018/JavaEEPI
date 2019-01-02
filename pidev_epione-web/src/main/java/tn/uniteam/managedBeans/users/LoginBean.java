@@ -73,7 +73,7 @@ public class LoginBean implements Serializable {
 	}
 	
 	public List<AspNetUser> doListDoctors() {
-		return uml.getAllDoctors();
+		return uml.getOthersDoctors(loggedUser);
 	}
 	
 	public String getLogin() {
