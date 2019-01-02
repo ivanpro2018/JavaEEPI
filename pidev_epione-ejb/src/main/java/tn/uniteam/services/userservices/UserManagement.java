@@ -67,10 +67,12 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 
 
 	@Override
-	public AspNetUser searchUser(String Id) {
+	public AspNetUser searchUser(String id) {
 		// TODO Auto-generated method stub
-		return em.find(AspNetUser.class, Id);
+		return em.find(AspNetUser.class, id);
 	}
-    
+
+
+	
 
 }

@@ -18,22 +18,17 @@ public class TestUserManagement {
 		// TODO Auto-generated method stub
 		Context ctx = new InitialContext();
 		String jndiName = "pidev_epione-ear/pidev_epione-ejb/UserManagement!tn.uniteam.services.userservices.UserManagementRemote";
-		UserManagementRemote proxy = (UserManagementRemote) ctx.lookup(jndiName);
-		AspNetUser a = new AspNetUser();
-		a.setUserName("Ivanoos");
-		a.setId("kjfkjjkjdefeffjkdekj");
-		a.setEmailConfirmed(true);
-		a.setLockoutEnabled(true);
-		a.setDiscriminator("patient");
-		a.setPhoneNumberConfirmed(false);
-		a.setAccessFailedCount(0);
-		a.setTwoFactorEnabled(false);
-		a.setGender(Gender.female);
-		Date d = new Date();
-		a.setBirthDate(d);
 		
+		UserManagementRemote proxy = (UserManagementRemote) ctx.lookup(jndiName);
+		Date d = new Date();
+		AspNetUser a = new AspNetUser("Sirine",0,"sirine123",true,true,false,false,"patient");
+		
+		
+		proxy.addUser(a);
+		System.out.println("User ajouté!");
 		
 		try {
+			proxy.addUser(a);
 			AspNetUser u = proxy.searchUser("kjfkjjkjdefeffjkdekj");
 			System.out.println("User trouvé! "+u);
 			proxy.deleteUser(u);	
@@ -47,7 +42,7 @@ public class TestUserManagement {
 			System.out.println("OK!!");
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("cv pas!!");
 		}
 				
 		

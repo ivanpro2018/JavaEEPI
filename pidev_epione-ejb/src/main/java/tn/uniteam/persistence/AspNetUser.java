@@ -316,6 +316,30 @@ public class AspNetUser implements Serializable {
 	}
 
 
+	
+
+	
+
+	public AspNetUser(String id, String address, int age, Date birthDate, String email, String firstName, Gender gender,
+			String imageName, String lastName, String phoneNumber, int poids, int taille, String traitements,
+			String username) {
+		super();
+		this.id = id;
+		this.address = address;
+		this.age = age;
+		this.birthDate = birthDate;
+		this.email = email;
+		this.firstName = firstName;
+		this.gender = gender;
+		this.imageName = imageName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.poids = poids;
+		this.taille = taille;
+		this.traitements = traitements;
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
 		return "User : [id=" + id + ", accessFailedCount=" + accessFailedCount + ", address=" + address + ", age="
