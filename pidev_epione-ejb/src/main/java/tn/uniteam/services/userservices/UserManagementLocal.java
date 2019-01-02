@@ -15,7 +15,7 @@ public interface UserManagementLocal {
 	public void addUser(AspNetUser a);
 	public void updateUser(AspNetUser a);
 	public void deleteUser(AspNetUser a);
-	public AspNetUser loginUser(String username, String password);
+	public String loginUser(AspNetUser user);
 	public AspNetUser loginUser(String username);
 	public AspNetUser searchUser(String username);
 

@@ -32,13 +32,20 @@ public class LoginBean implements Serializable {
 	private UserManagementLocal uml;
 	
 	public String doLogin(){
-		String redirectionPage = null;
-		user = uml.loginUser(login, password);
-		if(user != null) {
+		String redirectionPage = "";
+		user = new AspNetUser();
+		user.setUserName(login);
+		user.setPasswordHash(password);
+		String connxion = uml.loginUser(user);
+		
+		if(connxion.equals("\"ConnexionSuccess\"")) {
 			redirectionPage = "welcome?faces-redirect=true";
 		}
 		else {
-			FacesContext.getCurrentInstance().addMessage("form:btn", new FacesMessage("Login ou mot de passe incorrects!"));
+			FacesMessage msg = new FacesMessage( "Login ou mot de passe incorrects!" );
+			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+			FacesContext.getCurrentInstance().addMessage(null, msg);
+			redirectionPage = "login.xhtml?faces-redirect=true";
 			return redirectionPage;
 		}		
 		
