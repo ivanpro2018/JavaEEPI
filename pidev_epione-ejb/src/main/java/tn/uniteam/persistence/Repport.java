@@ -63,9 +63,9 @@ public class Repport implements Serializable {
 		return this.repportId;
 	}
 
-	public void setRepportId(int repportId) {
-		this.repportId = repportId;
-	}
+//	public void setRepportId(int repportId) {
+//		this.repportId = repportId;
+//	}
 
 	public String getRepportName() {
 		return this.repportName;
@@ -153,6 +153,14 @@ public class Repport implements Serializable {
 
 	public void setAspNetUser(AspNetUser aspNetUser) {
 		this.aspNetUser = aspNetUser;
+	}
+
+	@Override
+	public String toString() {
+		return "Repport [repportId=" + repportId + ", repportName=" + repportName + ", repportDate=" + repportDate
+				+ ", patientName=" + patientName + ", diseaseDeclared=" + diseaseDeclared + ", symptoms=" + symptoms
+				+ ", abnormalities=" + abnormalities + ", imageDisease=" + imageDisease + ", repportContent="
+				+ repportContent + ", diagnostic=" + diagnostic + ", referentDoctor=" + referentDoctor + "]";
 	}
 
 }

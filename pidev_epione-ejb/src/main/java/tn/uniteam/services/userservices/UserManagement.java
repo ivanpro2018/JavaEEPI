@@ -7,6 +7,12 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import tn.uniteam.persistence.AspNetUser;
 
@@ -58,10 +64,10 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 
 
 	@Override
-	public AspNetUser loginUser(String username, String password) {
+	public AspNetUser loginUser(String username) {
 		// TODO Auto-generated method stub
-		String req = "select u from AspNetUser u where u.username =:login";
-		Query query = em.createQuery(req).setParameter("login", username);//.setParameter("password", password);
+		String req = "select u from AspNetUser u where u.username =:login or u.email =:email";
+		Query query = em.createQuery(req).setParameter("login", username).setParameter("email", username);
 		return (AspNetUser) query.getSingleResult();
 	}
 
@@ -73,6 +79,59 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 	}
 
 
+<<<<<<< HEAD
 	
+=======
+	@Override
+	public List<AspNetUser> getAllDoctors() {
+		// TODO Auto-generated method stub
+		String req = "select u from AspNetUser u where u.discriminator = 'Doctor'";
+		Query query = em.createQuery(req);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<AspNetUser> getOthersDoctors(AspNetUser doc) {
+		// TODO Auto-generated method stub
+		String req = "select u from AspNetUser u where u.discriminator = 'Doctor' and u.id <>:ids";
+		Query query = em.createQuery(req).setParameter("ids", doc.getId());
+		return query.getResultList();
+	}
+
+	@Override
+	public List<AspNetUser> getAllPatients() {
+		String req = "select u from AspNetUser u where u.discriminator = 'Patient'";
+		Query query = em.createQuery(req);
+		return query.getResultList();
+	}
+
+
+	@Override
+	public String loginUser(AspNetUser user) {
+		// TODO Auto-generated method stub
+//		String req = "select u from AspNetUser u where u.username =:login and u.passwordHash =:password";
+//		Query query = em.createQuery(req).setParameter("login", username).setParameter("password", password);
+//		return (AspNetUser) query.getSingleResult();
+		
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://localhost:54774/api/Login");
+
+		Response reponse = target.request().post(Entity.entity(user, MediaType.APPLICATION_JSON));
+		String result = reponse.readEntity(String.class);
+		System.out.println(result);
+		if (result.equals("")) {
+			 
+			reponse.close();
+			return result;
+		} 
+		else {
+			 
+			reponse.close();
+			return result;
+		}
+
+	}
+    
+>>>>>>> b6cbff28586b366b410cb5a6202c0eb000e0cb33
 
 }

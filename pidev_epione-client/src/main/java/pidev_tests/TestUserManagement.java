@@ -33,13 +33,13 @@ public class TestUserManagement {
 			System.out.println("User trouvé! "+u);
 			proxy.deleteUser(u);	
 			System.out.println("User retiré!");
-			proxy.addUser(a);	
-			System.out.println("User ajouté!");
-			a.setUserName("Polios");
-			proxy.updateUser(a);	
-			System.out.println("User modifié!");
-			System.out.println(proxy.getAllUsers());
-			System.out.println("OK!!");
+//			proxy.addUser(a);	
+//			System.out.println("User ajouté!");
+//			a.setUserName("Polios");
+//			proxy.updateUser(a);	
+//			System.out.println("User modifié!");
+//			System.out.println(proxy.getAllUsers());
+//			System.out.println("OK!!");
 			
 		} catch (Exception e) {
 			System.out.println("cv pas!!");
