@@ -20,7 +20,9 @@ import org.primefaces.model.chart.LineChartModel;
 import org.primefaces.model.chart.LineChartSeries;
 import org.primefaces.model.chart.PieChartModel;
 
+import tn.uniteam.managedBeans.users.LoginBean;
 import tn.uniteam.persistence.Disponibility;
+import tn.uniteam.persistence.Reason;
 import tn.uniteam.services.espacemedecin.DoctorManagement;
 
 
@@ -117,7 +119,7 @@ public class StatBean {
 			{semaineDern=(day-7+30);}
 		LineChartSeries serie1= new LineChartSeries();
 		System.out.println(semaineDern);
-		List<Date> listeDate=dm.getNbAppByWeek("9d8c6214-a26a-40f3-b370-e0e1a7984e91");
+		List<Date> listeDate=dm.getNbAppByWeek(LoginBean.loggedUser.getId());
 		for(i=semaineDern;i<=(semaineDern+7);i++) {
 			int rdv=0;
 			if (i>30)	
@@ -163,29 +165,17 @@ public class StatBean {
 
 	public void CreateBar() {
 		bar = new BarChartModel();
-		ChartSeries newOrder= new ChartSeries("New order");
-		newOrder.set("2014", 100);
-		newOrder.set("2015",70);
-		newOrder.set("2016", 150);
-		
-		ChartSeries Delivered= new ChartSeries("Delivered");
-		Delivered.set("2014", 90);
-		Delivered.set("2015",60);
-		Delivered.set("2016", 130);
-		
-		ChartSeries returned= new ChartSeries("Returned");
-		returned.set("2014", 10);
-		returned.set("2015",20);
-		returned.set("2016", 5);
-		
-		bar.addSeries(newOrder);
-		bar.addSeries(Delivered);
-		bar.addSeries(returned);
-		
-		bar.setTitle(" Yearly Report Summary");
+		List<Reason> listeRe=dm.getReasonsByDoctor(LoginBean.loggedUser.getId());
+		for(int i=0; i<listeRe.size();i++) {
+			ChartSeries newOrder= new ChartSeries(listeRe.get(i).getReasonContent());
+			newOrder.set(listeRe.get(i).getReasonContent(), listeRe.get(i).getPrix());
+			bar.addSeries(newOrder);
+		}
+	
+		bar.setTitle(" Operation's Price Report");
 		bar.setLegendPosition("ne");
-		bar.getAxis(AxisType.X).setLabel("Year");
-		bar.getAxis(AxisType.Y).setLabel("Sales");
+		bar.getAxis(AxisType.X).setLabel("Operation");
+		bar.getAxis(AxisType.Y).setLabel("Price with DT");
 		bar.getAxis(AxisType.Y).setMin(0);
 		bar.getAxis(AxisType.Y).setMax(250);
 	}
@@ -198,7 +188,7 @@ public class StatBean {
 		int jeudi=0;
 		int vendredi=0;
 		int samedi=0;
-		List<Date> listeDate=dm.getNbDispoByWeek("fc92be34-7fe8-4ab5-9fbf-d7d33742624a");
+		List<Date> listeDate=dm.getNbDispoByWeek(LoginBean.loggedUser.getId());
 		Calendar cal = Calendar.getInstance();
 		
 		System.out.println(listeDate);

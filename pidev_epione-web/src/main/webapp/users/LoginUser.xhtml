@@ -44,7 +44,7 @@
 <ul class="navbar-nav ml-auto">
             
 <li class="nav-item">
-              <a class="nav-link" href="../users/index.jsf">Home</a>
+              <a class="nav-link" href="index.jsf">Home</a>
             </li>
             
 <li class="nav-item">
@@ -54,13 +54,7 @@
 <li class="nav-item">
               <a class="nav-link" href="post.html">Appointments</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../espacepatient/Patient.jsf">Profil</a>
-            </li>
             
-<li class="nav-item">
-              <a class="nav-link" href="../analytics/loginDash.jsf">Dashboard</a>
-            </li>
 <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
@@ -94,26 +88,16 @@
       
 <div class="row">
  
-<ui:repeat value="#{doctorBean.lstm()}" var="d">
-<h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
-            <p:graphicImage name="img/#{d.imageName}" width="300px" height="200px"/> 
-            <p:outputPanel>
-                <h:panelGrid columns="2" cellpadding="5">
-                    <h:outputText value="Email:" />
-                    <h:outputText value="#{d.email}" style="font-weight: bold"/>
- 
-                    <h:outputText value="First name:" />
-                    <h:outputText value="#{d.firstName}" style="font-weight: bold"/>
- 
-                    <h:outputText value="Last Name:" />
-                    <h:outputText value="#{d.lastName}" style="font-weight: bold"/>
-                    <h:form>
-                    <h:commandButton id="btn" class="btn btn-primary" action="#{doctorBean.listeDispo(d.id)}" value="View Disponibilities" />
-               		 </h:form>
-                </h:panelGrid>
-            </p:outputPanel>
-        </h:panelGrid>
-</ui:repeat>
+<h:form>
+			<h:panelGrid columns="2">
+				<h:outputText value="login" />
+				<h:inputText value="#{loginBean.login}" class="form-control"/>
+				<h:outputText value="password" />
+				<h:inputSecret value="#{loginBean.password}" class="form-control"/>
+			</h:panelGrid>
+			<h:commandButton action="#{loginBean.doLogin()}" class="btn btn-primary" value="login" />
+			<h:commandLink action="signUp" value="signUp" />
+		</h:form>
 
       </div>
     </div>

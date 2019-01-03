@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import tn.uniteam.managedBeans.users.LoginBean;
 import tn.uniteam.persistence.AspNetUser;
 import tn.uniteam.persistence.Reason;
 import tn.uniteam.services.espacemedecin.DoctorManagement;
@@ -22,10 +23,10 @@ public class ReasonBean {
     DoctorManagement reasonManagement;
 	
 	 public List<Reason> getListeReasons() {
-			return reasonManagement.getReasonsByDoctor("fc92be34-7fe8-4ab5-9fbf-d7d33742624a");		
+			return reasonManagement.getReasonsByDoctor(LoginBean.loggedUser.getId());		
 		}
 	 public String ajouterReason() {			
-		 reason.setAspNetUser(reasonManagement.getDoctorById("fc92be34-7fe8-4ab5-9fbf-d7d33742624a"));			
+		 reason.setAspNetUser(reasonManagement.getDoctorById(LoginBean.loggedUser.getId()));			
 			reasonManagement.addReason(reason);		
 			return "/espacemedecin/ShowReason.xhtml?faces-redirect=true";
 		}
@@ -41,7 +42,7 @@ public class ReasonBean {
 	 }
 	 public String metreAjourReason() {
 	    	System.out.println("avant update");
-	    	AspNetUser d = reasonManagement.getDoctorById("fc92be34-7fe8-4ab5-9fbf-d7d33742624a");
+	    	AspNetUser d = reasonManagement.getDoctorById(LoginBean.loggedUser.getId());
 	    	reasonManagement.updateReason(new Reason(this.getReasonId(),prix,reasonContent,d));
 	        return "/espacemedecin/ShowReason.xhtml?faces-redirect=true";
 

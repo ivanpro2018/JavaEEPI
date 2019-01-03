@@ -93,7 +93,7 @@ public class DoctorManagement implements DoctorManagementRemote, DoctorManagemen
 		//SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		//Date date = new Date();
 		//System.out.println(formatter.format(date));
-		String req = "select u from Appointment u where u.aspNetUser1 =:login";
+		String req = "select u from Appointment u where u.AspNetUser1 =:login";
 		Query query = em.createQuery(req).setParameter("login", d);
 		return query.getResultList();
 	}
@@ -101,7 +101,7 @@ public class DoctorManagement implements DoctorManagementRemote, DoctorManagemen
 	@Override
 	public List<Date> getNbAppByWeek(String id) {
 		AspNetUser d=getDoctorById(id);
-		String req = "select u.date from Appointment u where u.aspNetUser1 =:login";
+		String req = "select u.Date from Appointment u where u.AspNetUser1 =:login";
 		Query query = em.createQuery(req).setParameter("login", d);
 		return query.getResultList();
 		

@@ -89,12 +89,13 @@ public class DoctorBean {
 	
 	public String listeDispo(String idDoc) throws IOException{
 		Type listType = new TypeToken<ArrayList<Disponibility>>(){}.getType();
-		String webPage = "http://localhost:54774/APIDoctor/ViewDispo/"+idDoc;
+		String webPage = "http://localhost:54774/api/dispoByDoctor/"+idDoc;
 		String userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) " +
                 "Chrome/30.0.1599.101 Safari/537.36";
 		String data = Jsoup.connect(webPage).ignoreContentType(true).userAgent(userAgent).timeout(100000).method(Method.POST).execute().body();
 		System.out.println("ba3d el sys data");
-		Gson g = new GsonBuilder().registerTypeAdapter(Date.class, new JsonDateDeserializer()).create();
+		//Gson g = new GsonBuilder().registerTypeAdapter(Date.class, new JsonDateDeserializer()).create();
+		Gson g = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
 		List<Disponibility> pls = g.fromJson(data, listType);
 		System.out.println(pls);
         setListeDispo(pls);

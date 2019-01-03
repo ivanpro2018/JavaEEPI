@@ -39,13 +39,13 @@ public class LoginBean implements Serializable {
 		String connxion = uml.loginUser(user);
 		
 		if(connxion.equals("\"ConnexionSuccess\"")) {
-			redirectionPage = "welcome?faces-redirect=true";
+			redirectionPage = "index?faces-redirect=true";
 		}
 		else {
 			FacesMessage msg = new FacesMessage( "Login ou mot de passe incorrects!" );
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
 			FacesContext.getCurrentInstance().addMessage(null, msg);
-			redirectionPage = "login.xhtml?faces-redirect=true";
+			redirectionPage = "LoginUser.xhtml?faces-redirect=true";
 			return redirectionPage;
 		}		
 		
@@ -57,7 +57,7 @@ public class LoginBean implements Serializable {
 		user = uml.loginUser(login);
 		if(user != null && user.getDiscriminator().equals("Doctor")) {
 			System.out.println("Logged!");
-			redirectionPage = "/dashboard/index?faces-redirect=true";
+			redirectionPage = "../dashboard/index.jsf";
 			System.out.println(redirectionPage);
 			loggedUser = user;
 		}

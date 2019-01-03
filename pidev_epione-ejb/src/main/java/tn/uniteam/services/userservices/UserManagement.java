@@ -66,7 +66,7 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 	@Override
 	public AspNetUser loginUser(String username) {
 		// TODO Auto-generated method stub
-		String req = "select u from AspNetUser u where u.username =:login or u.email =:email";
+		String req = "select u from AspNetUser u where u.UserName =:login or u.Email =:email";
 		Query query = em.createQuery(req).setParameter("login", username).setParameter("email", username);
 		return (AspNetUser) query.getSingleResult();
 	}
