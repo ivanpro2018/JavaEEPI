@@ -82,7 +82,7 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 	@Override
 	public List<AspNetUser> getAllDoctors() {
 		// TODO Auto-generated method stub
-		String req = "select u from AspNetUser u where u.discriminator = 'Doctor'";
+		String req = "select u from AspNetUser u where u.Discriminator = 'Doctor'";
 		Query query = em.createQuery(req);
 		return query.getResultList();
 	}
@@ -90,14 +90,14 @@ public class UserManagement implements UserManagementRemote, UserManagementLocal
 	@Override
 	public List<AspNetUser> getOthersDoctors(AspNetUser doc) {
 		// TODO Auto-generated method stub
-		String req = "select u from AspNetUser u where u.discriminator = 'Doctor' and u.id <>:ids";
+		String req = "select u from AspNetUser u where u.Discriminator = 'Doctor' and u.Id <>:ids";
 		Query query = em.createQuery(req).setParameter("ids", doc.getId());
 		return query.getResultList();
 	}
 
 	@Override
 	public List<AspNetUser> getAllPatients() {
-		String req = "select u from AspNetUser u where u.discriminator = 'Patient'";
+		String req = "select u from AspNetUser u where u.Discriminator = 'Patient'";
 		Query query = em.createQuery(req);
 		return query.getResultList();
 	}

@@ -12,10 +12,16 @@ public class Asset implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	public enum AssetType {
+        capital,
         credit,
+        cash,
         loan,
         material,
         room,
+        building,
+        land,
+        salary,
+        car,
         other
 	}
 	

@@ -20,8 +20,8 @@ public class TestMedecinManagement {
 		// TODO Auto-generated method stub
 
 		//AspNetUser u1=new AspNetUser("21","ariana",21,"ahmed","desri");
-		AspNetUser u2=new AspNetUser("27","ariana",30,"cheikha","d");
-		AspNetUser u3=new AspNetUser("55","tunis",32,"me","dd");
+//		AspNetUser u2=new AspNetUser("27","ariana",30,"cheikha","d");
+//		AspNetUser u3=new AspNetUser("55","tunis",32,"me","dd");
 
 		Context context=new InitialContext();
 		String jndiName="pidev_epione-ear/pidev_epione-ejb/MedecinServices!tn.uniteam.services.doctolib.MedecinServicesRemote";
@@ -29,9 +29,9 @@ public class TestMedecinManagement {
          
 
 
-		proxy.addUser(u2);
-		proxy.addUser(u3);
-		
+//		proxy.addUser(u2);
+//		proxy.addUser(u3);
+//		
 		List<AspNetUser> lists=proxy.getAllUsers();
 		System.out.print(lists);
 		//User u=proxy.Login("aa", "aa");

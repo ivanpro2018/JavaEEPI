@@ -1,0 +1,121 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"	
+	template="/WEB-INF/template/dashboard.xhtml">
+	
+	<ui:define name="title">Management | Epione Medical Portal</ui:define>
+	<ui:define name="title-header">My balance sheet</ui:define>
+	<ui:define name="content">
+	
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Result sheet as of January 2, 2019
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                        
+                        	<h:form><p:panelGrid style="width:100%; height:auto;" id="data">
+                        	
+                        		    <f:facet name="header">
+								        <p:row style="height: 20px;">
+								            <p:column>Assets</p:column>
+								            <p:column>2019-01-02</p:column>
+								            <p:column>Equity and Liabilities</p:column>
+								            <p:column>2019-01-02</p:column>
+								        </p:row>
+								 
+								    </f:facet>
+
+
+								    <p:row style="height: 15px;">
+								        <p:column colspan="2" style="font-weight: bold; text-decoration: underline;">Fixed assets </p:column>
+								        <p:column colspan="2" style="font-weight: bold; text-decoration: underline;">Shareholders' equity </p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Property, plant and equipment</p:column>
+								        <p:column value="#{officeBean.equipment}" style="text-align:right">
+								        
+								        </p:column>
+								 
+								        <p:column>Share capital</p:column>
+								        <p:column value="#{officeBean.capital}" style="text-align:right"></p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Land Buildings</p:column>
+								        <p:column value="#{officeBean.buildings}" style="text-align:right"></p:column>
+								        <p:column colspan="2" style="font-weight: bold;"></p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Industrial equipment</p:column>
+								        <p:column value="#{officeBean.materals}" style="text-align:right"></p:column>
+								        <p:column colspan="2" style="font-weight: bold; text-decoration: underline;">Non-current liabilities</p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Transport equipment</p:column>
+								        <p:column value="#{officeBean.transport}" style="text-align:right"></p:column>
+								        <p:column>MLT Loan</p:column>
+								        <p:column value="#{officeBean.loan}" style="text-align:right"></p:column>
+								    </p:row>
+								    <p:row style="height: 30px;">
+								        <p:column colspan="2" /> 
+								        <p:column colspan="2" />
+								    </p:row>
+								    <p:row>
+								        <p:column colspan="2" style="font-weight: bold; text-decoration: underline;">Current assets</p:column>
+								        <p:column colspan="2" style="font-weight: bold; text-decoration: underline;">Current liabilities</p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Stock</p:column>
+								        <p:column value="#{officeBean.stocks}" style="text-align:right"></p:column>
+								        <p:column>Trade payables</p:column>
+								        <p:column value="#{officeBean.trades}" style="text-align:right"></p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Debts</p:column>
+								        <p:column value="#{officeBean.debts}" style="text-align:right"></p:column>
+								        <p:column>Tax and social security debts</p:column>
+								        <p:column value="#{officeBean.charges}" style="text-align:right"></p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Bank</p:column>
+								        <p:column value="#{officeBean.credits}" style="text-align:right"></p:column>
+								        <p:column>Short-term bank debts </p:column>
+								        <p:column value="#{officeBean.bankloan}" style="text-align:right"></p:column>
+								    </p:row>
+								    <p:row>
+								        <p:column>Cash</p:column>
+								        <p:column value="#{officeBean.cash}" style="text-align:right"></p:column>
+								        <p:column colspan="2"> </p:column>
+								    </p:row>
+								    <p:row style="height: 30px;">
+								        <p:column colspan="2" /> 
+								        <p:column colspan="2" />
+								    </p:row>
+								    <p:row style="font-weight: bold; font-style: italic; text-transform: uppercase;" >
+								        <p:column>Total assets</p:column>
+								        <p:column style="text-align:right; border:3px solid #00d7a5">00</p:column>
+								        <p:column>Total equity and liabilities</p:column>
+								        <p:column style="text-align:right; border:3px solid #ff0060">00</p:column>
+								    </p:row>
+								 
+                        	</p:panelGrid></h:form>
+
+						</div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+
+	
+	
+	</ui:define>
+
+
+</ui:composition>
+            

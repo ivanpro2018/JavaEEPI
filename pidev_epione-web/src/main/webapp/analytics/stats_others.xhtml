@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"	
+	template="/WEB-INF/template/dashboard.xhtml">
+	
+	<ui:define name="title">Statistics | Epione Medical Portal</ui:define>
+	<ui:define name="title-header">Statistics office</ui:define>
+	<ui:define name="content">
+	
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Area Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" style="height:auto">
+<!--                             <div id="morris-area-chart"></div> -->
+							    <p:chart type="line" id="linear" model="#{statisticsBean.lineModel1}"  
+							        style="height:300px" />
+						</div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	</ui:define>
+
+
+</ui:composition>
+            

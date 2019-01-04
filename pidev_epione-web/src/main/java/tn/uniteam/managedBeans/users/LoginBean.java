@@ -57,7 +57,7 @@ public class LoginBean implements Serializable {
 		user = uml.loginUser(login);
 		if(user != null && user.getDiscriminator().equals("Doctor")) {
 			System.out.println("Logged!");
-			redirectionPage = "../dashboard/index.jsf";
+			redirectionPage = "../dashboard/index.jsf?faces-redirect=true";
 			System.out.println(redirectionPage);
 			loggedUser = user;
 		}

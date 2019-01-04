@@ -19,6 +19,7 @@ import javax.servlet.http.*;
 import tn.uniteam.managedBeans.users.LoginBean;
 import tn.uniteam.persistence.AspNetUser;
 import tn.uniteam.persistence.Repport;
+import tn.uniteam.services.analytics.MailSender;
 import tn.uniteam.services.analytics.RepportManagement;
 import tn.uniteam.services.analytics.RepportManagementLocal;
 import tn.uniteam.services.userservices.UserManagementLocal;
@@ -150,5 +151,73 @@ public class CompteRenduBean implements Serializable {
 	}
 	
 	
+	
+	/*   API Mail   */
+	
+	
+	
+    private String fromMail;
+    private String username;
+    private String password;
+    private String toMail;
+    private String subject;
+    private String message;
+
+    public String getFromMail() {
+        return fromMail;
+    }
+
+    public void setFromMail(String fromMail) {
+        this.fromMail = fromMail;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getToMail() {
+        return toMail;
+    }
+
+    public void setToMail(String toMail) {
+        this.toMail = toMail;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void send() {
+        try {
+            MailSender mailSender = new MailSender();
+            mailSender.sendMail(fromMail, username, password, toMail, subject, message);
+        } catch (Exception e) {
+        }
+    }
+
 
 }
